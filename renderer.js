@@ -99,7 +99,7 @@ function initAMap() {
             const baseSize = calculateIconSize(map.getZoom(), 30, 50);
             monsterEl.style.width = `${baseSize}px`;
             monsterEl.style.height = `${baseSize}px`;
-            monsterEl.style.backgroundImage = 'url("/static/images/enemy_icon.png")';
+            monsterEl.style.backgroundImage = 'url("/img/enemy_icon.png")';
             monsterEl.style.backgroundSize = 'cover';
             monsterEl.style.backgroundRepeat = 'no-repeat';
             monsterEl.style.backgroundColor = 'transparent';
@@ -174,7 +174,7 @@ function addBaseMarker() {
     baseElement.className = 'base-icon';
     baseElement.style.width = `${baseSize}px`;
     baseElement.style.height = `${baseSize}px`;
-    baseElement.style.backgroundImage = 'url("static/images/xbmu.png")';
+    baseElement.style.backgroundImage = 'url("/img/xbmu.png")';
     baseElement.style.backgroundSize = 'cover';
     baseElement.style.backgroundRepeat = 'no-repeat';
     baseElement.style.backgroundPosition = 'center';
@@ -774,7 +774,7 @@ function generateMonsters(appendMode = false) {
         // 添加怪物图标样式
         monsterEl.style.width = `${baseSize}px`;
         monsterEl.style.height = `${baseSize}px`;
-        monsterEl.style.backgroundImage = 'url("/static/images/enemy_icon.png")';
+        monsterEl.style.backgroundImage = 'url("/img/enemy_icon.png")';
         monsterEl.style.backgroundSize = 'cover';
         monsterEl.style.backgroundRepeat = 'no-repeat';
         monsterEl.style.backgroundColor = 'transparent';
@@ -856,7 +856,7 @@ function updateMonsterMarkers() {
                 // 根据缩放级别动态调整图标大小
                 content.style.width = `${baseSize}px`;
                 content.style.height = `${baseSize}px`;
-                content.style.backgroundImage = 'url("static/images/enemy_icon.png")';
+                content.style.backgroundImage = 'url("/img/enemy_icon.png")';
                 content.style.backgroundSize = 'cover';
                 
                 // 一定要设置为圆形 - 修复边框形状问题
@@ -1142,7 +1142,7 @@ function initBattleScene() {
         const textureLoader = new THREE.TextureLoader();
         
         // 加载草地纹理
-        const grassTexturePath = '/static/images/grass.jpg';
+        const grassTexturePath = '/img/grass.jpg';
         console.log('正在加载草地纹理:', grassTexturePath);
         
         textureLoader.load(grassTexturePath, function(texture) {
@@ -1545,7 +1545,7 @@ function initBattleScene() {
 
     function loadPlayerModel(callback) {
         try {
-            const playerModelPath = '/static/models/player.glb';
+            const playerModelPath = '/models/player.glb';
             console.log('正在加载玩家模型:', playerModelPath);
             
             // 尝试使用相对路径加载
@@ -1593,7 +1593,7 @@ function initBattleScene() {
 
     function loadEnemyModel(callback) {
         try {
-            const enemyModelPath = '/static/models/enemy.glb';
+            const enemyModelPath = '/models/enemy.glb';
             console.log('正在加载敌人模型:', enemyModelPath);
             
             // 尝试使用相对路径加载
@@ -4441,7 +4441,7 @@ function loadSkyBox(callback) {
     const textureLoader = new THREE.TextureLoader();
     
     // 加载草地纹理
-    const grassTexturePath = '/static/images/grass.jpg';
+    const grassTexturePath = '/img/grass.jpg';
     console.log('正在加载草地纹理:', grassTexturePath);
     
     textureLoader.load(grassTexturePath, function(texture) {
@@ -4693,7 +4693,7 @@ function refreshAllMonsterMarkers() {
         // 添加怪物图标样式
         monsterEl.style.width = `${baseSize}px`;
         monsterEl.style.height = `${baseSize}px`;
-        monsterEl.style.backgroundImage = 'url("static/images/enemy_icon.png")';
+        monsterEl.style.backgroundImage = 'url("/img/enemy_icon.png")';
         monsterEl.style.backgroundSize = 'cover';
         monsterEl.style.backgroundRepeat = 'no-repeat';
         monsterEl.style.backgroundColor = 'transparent';
@@ -4897,7 +4897,7 @@ socket.on('playerLeft', (playerId) => {
 function createOtherPlayerModel(playerData) {
     const loader = new GLTFLoader();
     loader.load(
-        path.join(__dirname, 'static/models/player.glb'),
+        path.join(__dirname, 'models/player.glb'),
         (gltf) => {
             const model = gltf.scene;
             model.position.copy(playerData.position);
