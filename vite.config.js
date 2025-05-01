@@ -7,7 +7,9 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    assetsDir: 'assets'
+    assetsDir: 'assets',
+    assetsInlineLimit: 0
   },
-  publicDir: 'static'
+  publicDir: 'static',
+  assetsInclude: ['**/*.glb', '**/*.gltf', '**/*.mp3', '**/*.png', '**/*.jpg', '**/*.jpeg']
 }) 
