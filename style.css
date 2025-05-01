@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('./img/player_icon.png');
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+.enemy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('./img/enemy_icon.png');
+    background-size: cover;
+    transition: transform 0.2s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.enemy:hover {
+    transform: scale(1.1);
+}
+
+#coordinate-display {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#battle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 添加怪物信息窗口样式 */
+.monster-info {
+    padding: 15px;
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 8px;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 200px;
+}
+
+.monster-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffcc00;
+    text-align: center;
+}
+
+.monster-info p {
+    margin: 8px 0;
+}
+
+#battle-start-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    margin-top: 12px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#battle-start-btn:hover {
+    background-color: #ff0000;
+}
+
+.health-bar {
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#player-health-bar {
+    left: 20px;
+}
+
+#enemy-health-bar {
+    right: 20px;
+}
+
+.health-bar-inner {
+    height: 100%;
+    background-color: green;
+    transition: width 0.5s ease;
+}
+
+#battle-log {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#exit-battle-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+#exit-battle-button:hover {
+    background-color: #ff0000;
+}
+
+/* 玩家属性框样式 */
+.player-stats-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-family: 'Arial', sans-serif;
+    min-width: 180px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.player-stats-container h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #ffd700;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+}
+
+.player-stats-container .stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.player-stats-container .stat-label {
+    color: #aaaaaa;
+}
+
+.player-stats-container .stat-value {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.player-stats-container .hp-stat .stat-value {
+    color: #ff6b6b;
+}
+
+.player-stats-container .coins-stat .stat-value {
+    color: #ffd700;
+}
+
+.player-stats-container .attack-stat .stat-value {
+    color: #ffa502;
+}
+
+.player-stats-container .defense-stat .stat-value {
+    color: #2ed573;
+}
+
+.player-stats-container .speed-stat .stat-value {
+    color: #70a1ff;
+}
+
+.player-stats-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .player-stats-container {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        min-width: 150px;
+    }
+    
+    .player-stats-container h3 {
+        font-size: 16px;
+    }
+    
+    .player-stats-container .stat-row {
+        font-size: 12px;
+    }
+}

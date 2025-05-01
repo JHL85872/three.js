@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars with AMap</title>
+    <script src="https://webapi.amap.com/maps?v=2.0&key=e88f18e3522356fcf941f4fe0a27ef98"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="map-container"></div>
+    <div id="coordinate-display"></div>
+    <audio id="explosion-sound" src="/sounds/explosion.mp3"></audio>
+    <audio id="win-sound" src="/sounds/win.mp3"></audio>
+    <audio id="lose-sound" src="/sounds/lose.mp3"></audio>
+    <audio id="battle-music" src="/sounds/battlemusic.mp3" loop></audio>
+    <audio id="defense-sound" src="/sounds/defense.mp3"></audio>
+    <audio id="fire-sound" src="/sounds/fire.mp3"></audio>
+    <audio id="recover-sound" src="/sounds/recover.mp3"></audio>
+    <audio id="run-sound" src="/sounds/run.mp3"></audio>
+    <audio id="map-music" src="/sounds/mapmusic.mp3" loop></audio>
+    <div id="battle-container" style="display: none;">
+        <canvas id="battle-canvas"></canvas>
+        <div id="battle-log"></div>
+        <div id="player-health-bar" class="health-bar"></div>
+        <div id="enemy-health-bar" class="health-bar"></div>
+        <button id="exit-battle-button" style="display: none;">退出战斗</button>
+    </div>
+    <script type="module" src="/renderer.js"></script>
+</body>
+
+</html>
