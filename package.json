@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "preview": "vite preview --open"
+    "preview": "vite preview --open",
+    "deploy": "npm run build"
   },
   "dependencies": {
     "boolean": "^3.2.0",
